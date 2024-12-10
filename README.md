@@ -5,5 +5,5 @@ para poder a ver la utilizacion y consumo de un api a su vez tambien tienen la c
 
 ## Run Aplication
 
-1. npm install
-2. ionic serve
+1. npm install (instalar dependencias)
+2. ionic serve (para poder visualizar su funcionamiento en local)
