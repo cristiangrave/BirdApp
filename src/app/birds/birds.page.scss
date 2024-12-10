@@ -18,7 +18,7 @@
 
 .bird-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--ion-color-light);
 }
@@ -57,7 +57,7 @@
 
 .audio-controls {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 16px;
   gap: 16px;
 }
@@ -82,7 +82,7 @@ ion-progress-bar {
 
 .time-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 4px;
   font-size: 13px;
   color: var(--ion-color-medium);
