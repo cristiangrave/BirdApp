@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>AppBird</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content">
+  <ion-list *ngIf="birds.length > 0; else noBirdsTemplate">
+    <div *ngFor="let bird of birds" class="bird-container">
+      <ion-item lines="none" class="bird-item">
+        <div class="bird-thumbnail">
+          <img
+            (click)="playSound(bird)"
+            [src]="bird.sono?.med || placeholderImage"
+            alt="Sonograma del ave"
+            (error)="onImageError($event)"
+          />
+        </div>
+        <div class="bird-info">
+          <p><strong>Familia:</strong> {{ bird.gen }} {{ bird.sp }}</p>
+          <p><strong>Nombre:</strong> {{ bird.en }}</p>
+          <p *ngIf="bird.loc"><strong>Ubicacion:</strong> {{ bird.loc }}</p>
+          <p *ngIf="bird.rec"><strong>Descubridor:</strong> {{ bird.rec }}</p>
+        </div>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <ng-template #noBirdsTemplate>
+    <ion-item>
+      <ion-label>Cargando...</ion-label>
+    </ion-item>
+  </ng-template>
+</ion-content>
+
+<style></style>

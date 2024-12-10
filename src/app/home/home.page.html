@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="loadBirds()" #form="ngForm">
+    <ion-grid>
+      <!-- Campo de Nombre Completo -->
+      <ion-row position="center" class="ion-justify-content-start">
+        <ion-col position="center">
+          <ion-item>
+            <ion-label position="center" aria-label="Nombre completo requerido">
+              Nombre : Cristian Grave
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Campo de Número de Carnet -->
+      <ion-row class="ion-justify-content-start">
+        <ion-col position="center">
+          <ion-item>
+            <ion-label position="center" fill="outline">
+              Carnet : 22011441
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <!-- Botón de Cargar -->
+      <ion-row>
+        <ion-col class="ion-align-self-end">
+          <ion-button
+            type="button"
+            expand="block"
+            [disabled]="isLoading"
+            (click)="loadBirds()"
+          >
+            <ion-spinner *ngIf="isLoading" slot="start"></ion-spinner>
+            CARGAR</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
